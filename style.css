@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.container {
+    border: 1px solid black;
+}
+
+header {
+    margin-top: 8px;
+    text-align: center;
+}
+
+h1 {
+    display: inline-block;
+}
+
+form {
+    margin: 6px 0;
+}
+
+input {
+    height: 30px;
+}
+
+#insert {
+    height: 30px;
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+table {
+    border: 1px solid black;
+    margin: 8px 0;
+    width: 100%;
+}
+
+tr {
+    display: flex;
+}
+
+th{
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid;
+    width: 80%;
+}
+
+#concluir, #cancelar {
+    width: 100px;
+}
+
+#taskConcluida, #removeTask {
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+#taskConcluida {
+    background-color: #00FA9A;
+}
+
+#taskConcluida:hover {
+    background-color: #00FF7F;
+    cursor: pointer;
+}
+
+#removeTask {
+    background-color: #DC143C;
+}
+
+#removeTask:hover {
+    background-color: red;
+}
+
