@@ -3,33 +3,42 @@
 }
 
 body {
-    max-width: 1280px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .container {
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 8px;
 }
 
 header {
     margin-top: 8px;
     text-align: center;
+    border: 2px solid black;
+    border-radius: 4px;
 }
 
 h1 {
     display: inline-block;
 }
 
-form {
-    margin: 6px 0;
-}
-
 input {
     height: 30px;
 }
 
+input:focus {
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 2px;
+}
+
 #insert {
     height: 30px;
+    border: none;
+    border-radius: 4px;
 }
 
 input, button {
@@ -38,9 +47,11 @@ input, button {
     margin: 0;
 }
 
+
 table {
     border: 1px solid black;
-    margin: 8px 0;
+    border-radius: 2px;
+    margin-top: 8px;
     width: 100%;
 }
 
@@ -50,11 +61,17 @@ tr {
 
 th{
     border: 1px solid black;
+    align-content: center;
+    margin: 1px;
+    font-weight: 500;
+    padding: 5px;
 }
 
 td {
     border: 1px solid;
     width: 80%;
+    margin: 1px;
+    align-content: center;
 }
 
 #concluir, #cancelar {
@@ -68,19 +85,27 @@ td {
 }
 
 #taskConcluida {
-    background-color: #00FA9A;
+    color: green;
+    border: none;
+    background: none;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 #taskConcluida:hover {
-    background-color: #00FF7F;
+    color: #00FF7F;
     cursor: pointer;
 }
 
 #removeTask {
-    background-color: #DC143C;
+    color: #DC143C;
+    background: none;
 }
 
 #removeTask:hover {
-    background-color: red;
+    color: red;
 }
 
+#insert:hover {
+    cursor: pointer;
+}
