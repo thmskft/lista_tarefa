@@ -1,10 +1,13 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     max-width: 600px;
     margin: 0 auto;
+    font-family: Arial, sans-serif;
 }
 
 .container {
@@ -19,6 +22,7 @@ header {
     text-align: center;
     border: 2px solid black;
     border-radius: 4px;
+    padding: 8px;
 }
 
 h1 {
@@ -27,6 +31,8 @@ h1 {
 
 input {
     height: 30px;
+    width: 100%;
+    padding: 5px;
 }
 
 input:focus {
@@ -39,64 +45,55 @@ input:focus {
     height: 30px;
     border: none;
     border-radius: 4px;
-}
-
-input, button {
-    display: block;
     width: 100%;
-    margin: 0;
+    margin-top: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
 }
 
-table {
-    border: 1px solid black;
-    border-radius: 2px;
-    margin-top: 8px;
-    width: 100%;
+#insert:hover {
+    cursor: pointer;
+    background-color: #0056b3;
 }
 
-tr {
+
+.orderedList {
+    padding: 0;
+    margin-top: 10px;
+}
+
+.task-item {
     display: flex;
-}
-
-#th {
+    align-items: center;
+    justify-content: space-between;
     border: 1px solid black;
-    align-content: center;
-    margin: 1px;
-    font-weight: 500;
-    padding: 5px;
-    width: 70px;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
 }
 
-td {
-    border: 1px solid;
-    margin: 1px;
-    align-content: center;
+.task-text {
+    flex: 1;
+    font-size: 16px;
 }
 
-#concluir,#cancelar {
-    width: 50px;
-}
-
-#taskNameValue {
-    width: 80%;
-}
-
+/* Estilos para botões */
 .taskConcluida, .removeTask {
-    height: 100%;
     border: none;
     cursor: pointer;
+    padding: 5px 8px;
+    font-size: 16px;
 }
 
 .taskConcluida {
     color: green;
     background: none;
-    font-size: 18px;
-    font-weight: bolder;
 }
 
 .taskConcluida:hover {
     color: #00FF7F;
-    cursor: pointer;
 }
 
 .removeTask {
@@ -108,6 +105,8 @@ td {
     color: red;
 }
 
-#insert:hover {
-    cursor: pointer;
+.task-completed {
+    color: green !important;
+    font-style: italic;
+    text-decoration: line-through;
 }
