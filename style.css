@@ -47,7 +47,6 @@ input, button {
     margin: 0;
 }
 
-
 table {
     border: 1px solid black;
     border-radius: 2px;
@@ -59,50 +58,53 @@ tr {
     display: flex;
 }
 
-th{
+#th {
     border: 1px solid black;
     align-content: center;
     margin: 1px;
     font-weight: 500;
     padding: 5px;
+    width: 70px;
 }
 
 td {
     border: 1px solid;
-    width: 80%;
     margin: 1px;
     align-content: center;
 }
 
-#concluir, #cancelar {
-    width: 100px;
+#concluir,#cancelar {
+    width: 50px;
 }
 
-#taskConcluida, #removeTask {
+#taskNameValue {
+    width: 80%;
+}
+
+.taskConcluida, .removeTask {
     height: 100%;
     border: none;
     cursor: pointer;
 }
 
-#taskConcluida {
+.taskConcluida {
     color: green;
-    border: none;
     background: none;
     font-size: 18px;
     font-weight: bolder;
 }
 
-#taskConcluida:hover {
+.taskConcluida:hover {
     color: #00FF7F;
     cursor: pointer;
 }
 
-#removeTask {
+.removeTask {
     color: #DC143C;
     background: none;
 }
 
-#removeTask:hover {
+.removeTask:hover {
     color: red;
 }
 
