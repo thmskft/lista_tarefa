@@ -1,54 +1,48 @@
-const form = document.querySelector('#form-task');
 const taskDef = [];
-const orderedList = document.querySelector('.orderedList');
 
-form.addEventListener('submit', function (e) {
+$('#form-task').submit(function (e) {
     e.preventDefault();
     addLine();
 });
 
 function addLine() {
-    const taskName = document.getElementById('taskName');
+    const taskName = $('#taskName').val().trim();
 
-    if (taskDef.includes(taskName.value.trim()) || taskName.value.trim() === "") {
+    if (taskDef.includes(taskName) || taskName === "") {
         alert(`Task already exists or the field is empty`);
     } else {
-        taskDef.push(taskName.value.trim());
+        taskDef.push(taskName);
 
-        let taskItem = document.createElement('li');
-        taskItem.classList.add('task-item');
+        let line = '<li class="task-item">';
+        line += `<span class="task-text">${taskName}</span>`;
+        line += `<button class="taskConcluida"><i class="fa-solid fa-check"></i></button>`;
+        line += `<button class="removeTask"><i class="fa-solid fa-trash"></i></button>`;
+        line += '</li>';
 
-        taskItem.innerHTML = `
-            <span class="task-text">${taskName.value}</span>
-            <button class="taskConcluida"><i class="fa-solid fa-check"></i></button>
-            <button class="removeTask"><i class="fa-solid fa-trash"></i></button>
-        `;
-
-        orderedList.appendChild(taskItem);
+        $('.orderedList').append(line);
     }
 
-    taskName.value = '';
+    $('#taskName').val('');
 
-    document.querySelectorAll('.removeTask').forEach(button => {
-        button.addEventListener('click', function () {
-            const taskItem = this.closest('.task-item');
-            const taskText = taskItem.querySelector('.task-text').innerText.trim();
+    $('.orderedList').on('click', '.removeTask', function () {
+        const row = $(this).closest('li');
+        const taskText = row.find('.task-text').text().trim();
 
-            const index = taskDef.indexOf(taskText);
-            if (index !== -1) {
-                taskDef.splice(index, 1);
-            }
+        const index = taskDef.indexOf(taskText);
 
-            taskItem.remove();
-        });
+        if (index !== -1) {
+            taskDef.splice(index, 1);
+        }
+
+        row.remove();
     });
 
-    document.querySelectorAll('.taskConcluida').forEach(button => {
-        button.addEventListener('click', function () {
-            const taskTextElement = this.closest('.task-item').querySelector('.task-text');
-            taskTextElement.style.color = "green";
-            taskTextElement.style.fontStyle = "italic";
-            taskTextElement.style.textDecoration = "line-through";
+    $('.orderedList').on('click', '.taskConcluida', function () {
+        const taskTextElement = $(this).closest('li').find('.task-text');
+        taskTextElement.css({
+            'color': 'green',
+            'font-style': 'italic',
+            'text-decoration': 'line-through'
         });
     });
 }
